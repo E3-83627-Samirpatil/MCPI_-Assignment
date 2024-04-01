@@ -1,0 +1,4 @@
+../Inc/core_cm4.h:1688:22:__NVIC_EnableIRQ	2
+../Src/switch2.c:11:6:Switchinit	1
+../Src/switch2.c:32:5:Switchgetstate	2
+../Src/switch2.c:44:6:EXTI0_IRQHandler	1
