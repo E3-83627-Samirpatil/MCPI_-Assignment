@@ -1,0 +1,3 @@
+../Src/EEROM.c:10:6:EEPROM_init	16	static
+../Src/EEROM.c:18:6:EEPROM_write	24	static
+../Src/EEROM.c:29:6:EEPROM_read	32	static
