@@ -7,19 +7,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000010f8  08000190  08000190  00001190  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       0000007c  08001288  08001288  00002288  2**2
+  2 .rodata       00000080  08001288  08001288  00002288  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08001304  08001304  00003054  2**0
+  3 .ARM.extab    00000000  08001308  08001308  00003054  2**0
                   CONTENTS
-  4 .ARM          00000008  08001304  08001304  00002304  2**2
+  4 .ARM          00000008  08001308  08001308  00002308  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  0800130c  0800130c  00003054  2**0
+  5 .preinit_array 00000000  08001310  08001310  00003054  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  0800130c  0800130c  0000230c  2**2
+  6 .init_array   00000004  08001310  08001310  00002310  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08001310  08001310  00002310  2**2
+  7 .fini_array   00000004  08001314  08001314  00002314  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000054  20000000  08001314  00003000  2**2
+  8 .data         00000054  20000000  08001318  00003000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .ccmram       00000000  10000000  10000000  00003054  2**0
                   CONTENTS
@@ -201,11 +201,11 @@ int main(void)
  80002c2:	b093      	sub	sp, #76	@ 0x4c
  80002c4:	af02      	add	r7, sp, #8
 	char str1[24], str2[20];
-	RTC_Date d, dt = { .Date = 31, .Month = 12, .Year = 23, .WeekDay = 7 };
+	RTC_Date d, dt = { .Date = 28, .Month = 02, .Year = 24, .WeekDay = 7 };
  80002c6:	4b28      	ldr	r3, [pc, #160]	@ (8000368 <main+0xa8>)
  80002c8:	681b      	ldr	r3, [r3, #0]
  80002ca:	60fb      	str	r3, [r7, #12]
-	RTC_Time t, tm = { .Hours = 23, .Minutes = 59, .Seconds = 40 };
+	RTC_Time t, tm = { .Hours = 23, .Minutes = 59, .Seconds = 50 };
  80002cc:	4a27      	ldr	r2, [pc, #156]	@ (800036c <main+0xac>)
  80002ce:	1d3b      	adds	r3, r7, #4
  80002d0:	6812      	ldr	r2, [r2, #0]
@@ -244,7 +244,7 @@ int main(void)
  800030a:	4618      	mov	r0, r3
  800030c:	f000 f962 	bl	80005d4 <RTC_GetDate>
 		//UartGets(str1);
-		sprintf(str1, "DT=%02d-%02d-%02d W=%d", d.Date, d.Month, d.Year, d.WeekDay);
+		sprintf(str1, "DT=%02d-%02d-%02d W=%d\r\n", d.Date, d.Month, d.Year, d.WeekDay);
  8000310:	7c7b      	ldrb	r3, [r7, #17]
  8000312:	4619      	mov	r1, r3
  8000314:	7c3b      	ldrb	r3, [r7, #16]
@@ -259,7 +259,7 @@ int main(void)
  8000328:	4912      	ldr	r1, [pc, #72]	@ (8000374 <main+0xb4>)
  800032a:	f000 fb09 	bl	8000940 <siprintf>
 		//UartGets(str2);
-		sprintf(str2, "TM=%02d:%02d:%02d", t.Hours, t.Minutes, t.Seconds);
+		sprintf(str2, "TM=%02d:%02d:%02d\r\n", t.Hours, t.Minutes, t.Seconds);
  800032e:	7a3b      	ldrb	r3, [r7, #8]
  8000330:	461a      	mov	r2, r3
  8000332:	7a7b      	ldrb	r3, [r7, #9]
@@ -287,11 +287,11 @@ int main(void)
  8000362:	bf00      	nop
  8000364:	e7ca      	b.n	80002fc <main+0x3c>
  8000366:	bf00      	nop
- 8000368:	080012c8 	.word	0x080012c8
- 800036c:	080012cc 	.word	0x080012cc
+ 8000368:	080012cc 	.word	0x080012cc
+ 800036c:	080012d0 	.word	0x080012d0
  8000370:	08001288 	.word	0x08001288
  8000374:	0800129c 	.word	0x0800129c
- 8000378:	080012b4 	.word	0x080012b4
+ 8000378:	080012b8 	.word	0x080012b8
 
 0800037c <Bin2Bcd>:
  *      Author: Nilesh
@@ -1255,7 +1255,7 @@ LoopForever:
   ldr r1, =_edata
  800092c:	20000054 	.word	0x20000054
   ldr r2, =_sidata
- 8000930:	08001314 	.word	0x08001314
+ 8000930:	08001318 	.word	0x08001318
   ldr r2, =_sbss
  8000934:	20000054 	.word	0x20000054
   ldr r4, =_ebss
@@ -1332,10 +1332,10 @@ Infinite_Loop:
  80009be:	4798      	blx	r3
  80009c0:	3601      	adds	r6, #1
  80009c2:	e7f2      	b.n	80009aa <__libc_init_array+0x1e>
- 80009c4:	0800130c 	.word	0x0800130c
- 80009c8:	0800130c 	.word	0x0800130c
- 80009cc:	0800130c 	.word	0x0800130c
- 80009d0:	08001310 	.word	0x08001310
+ 80009c4:	08001310 	.word	0x08001310
+ 80009c8:	08001310 	.word	0x08001310
+ 80009cc:	08001310 	.word	0x08001310
+ 80009d0:	08001314 	.word	0x08001314
 
 080009d4 <__retarget_lock_acquire_recursive>:
  80009d4:	4770      	bx	lr
@@ -1841,9 +1841,9 @@ Infinite_Loop:
  8000e5c:	4638      	mov	r0, r7
  8000e5e:	f000 f879 	bl	8000f54 <_printf_i>
  8000e62:	e7ed      	b.n	8000e40 <_svfiprintf_r+0x1c0>
- 8000e64:	080012cf 	.word	0x080012cf
- 8000e68:	080012d5 	.word	0x080012d5
- 8000e6c:	080012d9 	.word	0x080012d9
+ 8000e64:	080012d3 	.word	0x080012d3
+ 8000e68:	080012d9 	.word	0x080012d9
+ 8000e6c:	080012dd 	.word	0x080012dd
  8000e70:	00000000 	.word	0x00000000
  8000e74:	08000bc9 	.word	0x08000bc9
 
@@ -2176,8 +2176,8 @@ Infinite_Loop:
  8001184:	f104 0619 	add.w	r6, r4, #25
  8001188:	e7f5      	b.n	8001176 <_printf_i+0x222>
  800118a:	bf00      	nop
- 800118c:	080012e0 	.word	0x080012e0
- 8001190:	080012f1 	.word	0x080012f1
+ 800118c:	080012e4 	.word	0x080012e4
+ 8001190:	080012f5 	.word	0x080012f5
 
 08001194 <memmove>:
  8001194:	4288      	cmp	r0, r1

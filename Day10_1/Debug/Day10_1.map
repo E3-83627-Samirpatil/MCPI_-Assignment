@@ -1082,61 +1082,61 @@ LOAD /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltool
 .iplt           0x08001288        0x0
  .iplt          0x08001288        0x0 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.rodata         0x08001288       0x7c
+.rodata         0x08001288       0x80
                 0x08001288                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08001288       0x47 ./Src/main.o
+ .rodata        0x08001288       0x4b ./Src/main.o
  *(.rodata*)
  .rodata._svfprintf_r.str1.1
-                0x080012cf       0x11 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
+                0x080012d3       0x11 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(libc_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x080012e0       0x22 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x08001304                        . = ALIGN (0x4)
- *fill*         0x08001302        0x2 
+                0x080012e4       0x22 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x08001308                        . = ALIGN (0x4)
+ *fill*         0x08001306        0x2 
 
-.ARM.extab      0x08001304        0x0
-                0x08001304                        . = ALIGN (0x4)
+.ARM.extab      0x08001308        0x0
+                0x08001308                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08001304                        . = ALIGN (0x4)
+                0x08001308                        . = ALIGN (0x4)
 
-.ARM            0x08001304        0x8
-                0x08001304                        . = ALIGN (0x4)
-                0x08001304                        __exidx_start = .
+.ARM            0x08001308        0x8
+                0x08001308                        . = ALIGN (0x4)
+                0x08001308                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08001304        0x8 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(libc_a-memchr.o)
-                0x0800130c                        __exidx_end = .
-                0x0800130c                        . = ALIGN (0x4)
+ .ARM.exidx     0x08001308        0x8 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libc_nano.a(libc_a-memchr.o)
+                0x08001310                        __exidx_end = .
+                0x08001310                        . = ALIGN (0x4)
 
-.preinit_array  0x0800130c        0x0
-                0x0800130c                        . = ALIGN (0x4)
-                0x0800130c                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08001310        0x0
+                0x08001310                        . = ALIGN (0x4)
+                0x08001310                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800130c                        PROVIDE (__preinit_array_end = .)
-                0x0800130c                        . = ALIGN (0x4)
+                0x08001310                        PROVIDE (__preinit_array_end = .)
+                0x08001310                        . = ALIGN (0x4)
 
-.init_array     0x0800130c        0x4
-                0x0800130c                        . = ALIGN (0x4)
-                0x0800130c                        PROVIDE (__init_array_start = .)
+.init_array     0x08001310        0x4
+                0x08001310                        . = ALIGN (0x4)
+                0x08001310                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800130c        0x4 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
-                0x08001310                        PROVIDE (__init_array_end = .)
-                0x08001310                        . = ALIGN (0x4)
+ .init_array    0x08001310        0x4 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
+                0x08001314                        PROVIDE (__init_array_end = .)
+                0x08001314                        . = ALIGN (0x4)
 
-.fini_array     0x08001310        0x4
-                0x08001310                        . = ALIGN (0x4)
+.fini_array     0x08001314        0x4
+                0x08001314                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08001310        0x4 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .fini_array    0x08001314        0x4 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08001314                        . = ALIGN (0x4)
-                0x08001314                        _sidata = LOADADDR (.data)
+                0x08001318                        . = ALIGN (0x4)
+                0x08001318                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x08001314        0x0
- .rel.iplt      0x08001314        0x0 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
+.rel.dyn        0x08001318        0x0
+ .rel.iplt      0x08001318        0x0 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.data           0x20000000       0x54 load address 0x08001314
+.data           0x20000000       0x54 load address 0x08001318
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -1154,12 +1154,12 @@ LOAD /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltool
  *(.RamFunc*)
                 0x20000054                        . = ALIGN (0x4)
                 0x20000054                        _edata = .
-                0x08001368                        _siccmram = LOADADDR (.ccmram)
+                0x0800136c                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x20000054        0x0 load address 0x08001368
+.igot.plt       0x20000054        0x0 load address 0x0800136c
  .igot.plt      0x20000054        0x0 /opt/st/stm32cubeide_1.15.0_2/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x08001368
+.ccmram         0x10000000        0x0 load address 0x0800136c
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)

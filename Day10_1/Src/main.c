@@ -32,8 +32,8 @@
 int main(void)
 {
 	char str1[24], str2[20];
-	RTC_Date d, dt = { .Date = 31, .Month = 12, .Year = 23, .WeekDay = 7 };
-	RTC_Time t, tm = { .Hours = 23, .Minutes = 59, .Seconds = 40 };
+	RTC_Date d, dt = { .Date = 28, .Month = 02, .Year = 24, .WeekDay = 7 };
+	RTC_Time t, tm = { .Hours = 23, .Minutes = 59, .Seconds = 50 };
 
 	SystemInit();
 	UartInit(BAUD_9600);
@@ -48,9 +48,9 @@ int main(void)
 		RTC_GetTime(&t);
 		RTC_GetDate(&d);
 		//UartGets(str1);
-		sprintf(str1, "DT=%02d-%02d-%02d W=%d", d.Date, d.Month, d.Year, d.WeekDay);
+		sprintf(str1, "DT=%02d-%02d-%02d W=%d\r\n", d.Date, d.Month, d.Year, d.WeekDay);
 		//UartGets(str2);
-		sprintf(str2, "TM=%02d:%02d:%02d", t.Hours, t.Minutes, t.Seconds);
+		sprintf(str2, "TM=%02d:%02d:%02d\r\n", t.Hours, t.Minutes, t.Seconds);
 		//LcdPuts(LCD_LINE1, str1);
 		//LcdPuts(LCD_LINE2, str2);
 		UartPuts(str1);
